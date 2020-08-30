@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
     s.summary          		= 'Bug reporting and feedback for mobile apps. Learn more at https://www.appelium.com'
     s.homepage         		= 'https://www.appelium.com/'
 
-    s.author           		= { 'Appelium' => 'support@appelium.io' }
+    s.author           		= { 'Appelium' => 'support@appelium.com' }
     s.license      			= { :type => 'Commercial', :file => 'LICENSE.md' }
 
     s.platform     			= :ios, '10.0'
