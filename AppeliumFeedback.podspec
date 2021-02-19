@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name             		= 'AppeliumFeedback'
-	s.version				= '2.5.0'
+	s.version				= '2.5.1'
     s.summary          		= 'Bug reporting and feedback for mobile apps. Learn more at https://www.appelium.com'
     s.homepage         		= 'https://www.appelium.com/'
 
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
     s.frameworks   			= 'AVFoundation', 'CoreGraphics', 'SystemConfiguration', 'UIKit', 'CoreVideo'
     s.xcconfig    			= { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/AppeliumFeedback/"' }
     s.requires_arc 			= true
-    s.vendored_frameworks	= 'AppeliumFeedback.framework'
+    s.vendored_frameworks	= 'AppeliumFeedback.xcframework'
 end  
