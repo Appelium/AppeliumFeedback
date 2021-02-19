@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name             		= 'AppeliumFeedback'
-	s.version				= '2.5.1'
+	s.version				= '2.5.2'
     s.summary          		= 'Bug reporting and feedback for mobile apps. Learn more at https://www.appelium.com'
     s.homepage         		= 'https://www.appelium.com/'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.license      			= { :type => 'Commercial', :file => 'LICENSE.md' }
 
     s.platform     			= :ios, '10.0'
-    s.source       			= { :http => "https://github.com/Appelium/AppeliumFeedback/releases/download/#{s.version}/AppeliumFeedback.framework.zip" }
+    s.source       			= { :http => "https://github.com/Appelium/AppeliumFeedback/releases/download/#{s.version}/AppeliumFeedback.xcframework.zip" }
     s.library      			= 'z'
     s.frameworks   			= 'AVFoundation', 'CoreGraphics', 'SystemConfiguration', 'UIKit', 'CoreVideo'
     s.xcconfig    			= { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/AppeliumFeedback/"' }
