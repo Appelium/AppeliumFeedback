@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name             		= 'AppeliumFeedback'
-	s.version				= '2.8.2'
+	s.version				= '2.9.0'
     s.summary          		= 'Bug reporting and feedback for mobile apps. Learn more at https://www.appelium.com'
     s.homepage         		= 'https://www.appelium.com/'
     s.cocoapods_version     = '>= 1.10.0'
@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
     s.author           		= { 'Appelium' => 'support@appelium.com' }
     s.license      			= { :type => 'Commercial', :file => 'LICENSE.md' }
 
-    s.platform     			= :ios, '11.0'
+    s.ios.deployment_target = '12.0'
+    s.tvos.deployment_target = '12.1'
     s.swift_versions        = ['5']
     s.source       			= { :http => "https://github.com/Appelium/AppeliumFeedback/releases/download/#{s.version}/AppeliumFeedback.xcframework.zip" }
     s.library      			= 'z'
