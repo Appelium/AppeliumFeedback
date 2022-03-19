@@ -15,7 +15,7 @@ For more info, visit [Appelium.com](https://www.appelium.com).
 To integrate AppeliumFeedback SDK into your Xcode project using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
 
 ```ruby
-pod 'AppeliumFeedback'
+pod 'AppeliumFeedbackKit'
 ```
 
 Then, run the following command:
@@ -28,10 +28,10 @@ $ pod install
 
 ## Usage
 
-1. Import AppeliumFeedback framework header in your app delegate
+1. import AppeliumFeedbackKit framework header in your app delegate
 
     ```swift
-    import AppeliumFeedback
+    import AppeliumFeedbackKit
     ```
 
 2. Add the following to your app delegate's `application:didFinishLaunchingWithOptions:` method.
