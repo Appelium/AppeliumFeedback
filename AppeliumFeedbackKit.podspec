@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name             		= 'AppeliumFeedbackKit'
-	s.version				= '4.9.0'
+	s.version				= '4.9.1'
     s.summary          		= 'Bug reporting and feedback for mobile apps. Learn more at https://www.appelium.com'
     s.homepage         		= 'https://www.appelium.com/'
     s.cocoapods_version     = '>= 1.10.0'
