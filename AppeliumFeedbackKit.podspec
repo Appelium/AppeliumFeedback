@@ -17,4 +17,5 @@ Pod::Spec.new do |s|
     s.xcconfig    			= { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/AppeliumFeedbackKit/"' }
     s.requires_arc 			= true
     s.vendored_frameworks	= 'AppeliumFeedbackKit.xcframework'
+    s.xcconfig 				= { 'EXCLUDED_ARCHS' => 'x86_64' }
 end
