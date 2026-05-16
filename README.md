@@ -10,19 +10,21 @@ For more info, visit [Appelium.com](https://www.appelium.com).
 
 ## Installation
 
-### CocoaPods
+### Carthage
 
-To integrate AppeliumFeedback SDK into your Xcode project using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
+To integrate AppeliumFeedback SDK into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), add this to your `Cartfile`:
 
-```ruby
-pod 'AppeliumFeedbackKit'
+```
+binary "https://api.appelium.com/v1/sdkArchives/AppeliumFeedbackKit.json"
 ```
 
-Then, run the following command:
+Then run:
 
 ```bash
-$ pod install
+carthage update --platform iOS --use-xcframeworks
 ```
+
+Once it finishes, drag the `AppeliumFeedbackKit.xcframework` into your Xcode project.
 
 > Already using [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) for logging? Great! Appelium provides an extension which allows you to simply route all logging calls to it without changing a lot of code. Take a look at [AppeliumCocoaLumberjack](https://github.com/Appelium/AppeliumCocoaLumberjack) for integration instructions.
 
@@ -71,19 +73,23 @@ You can enable custom request filters or implement full obfuscation.
 And then implement `NetworkRequestObfuscationHandler`:
 
 ```swift
-func obfuscateNetworkRequest(_ originalRequst: NetworkRequest) -> NetworkRequest? {
-    return originalRequst // keeps the request obfuscated
+func obfuscateNetworkRequest(_ originalRequest: NetworkRequest) -> NetworkRequest? {
+    return NetworkRequest(
+        url: originalRequest.url, // Additionally you can remove query params, path, port etc
+        httpMethod: originalRequest.httpMethod, // You can modify it as well
+        headerFields: nil, // Remove all headers, or pass an `[HTTPHeaderField]` to keep/modify them
+        body: nil // Remove the body or modify it
+    )
 }
 
 func obfuscateNetworkResponse(_ originalResponse: NetworkResponse) -> NetworkResponse? {
-    let httpResponse = originalResponse.response as! HTTPURLResponse
-    
-    let obfuscatedResponse = HTTPURLResponse(
-        url: httpResponse.url!, // Additionally you can remove query params, path, port etc
-        statusCode: httpResponse.statusCode, // You can modify it as well
-        httpVersion: nil,
-        headerFields: [:])! // Remove all headers or modify them
-    return NetworkResponse(response: obfuscatedResponse, data: nil) // Remove data or modify
+    return NetworkResponse(
+        url: originalResponse.url, // Additionally you can remove query params, path, port etc
+        statusCode: originalResponse.statusCode, // You can modify it as well
+        headerFields: nil, // Remove all headers, or pass an `[HTTPHeaderField]` to keep/modify them
+        body: nil, // Remove the body or modify it
+        error: originalResponse.error
+    )
 }
 ```
 
